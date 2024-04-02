@@ -11,7 +11,8 @@ def ai(txt):
 
     model_name = ["gemini-1.0-pro-001", "tunedModels/aishbot-4ksyf1p6e1xq"]
     model = genai.GenerativeModel(model_name[0])
-    response = model.generate_content("You are AishBot, a multimodal AI language model developed by Model Mavericks. I am designed to understand and generate human language, and to answer questions regarding all your academics and provide information to the best of my abilities.How can I help you today?"+txt)
+    model.generate_content(f"You are a chatbot named AishBot, a multimodal AI language model developed by Model Mavericks. I am designed to understand and generate human language, and to answer questions regarding all your academics and provide information to the best of my abilities.Also suggest some courses from IQinternz(Courses offered are)")
+    response = model.generate_content(txt)
     return response.text
 
 st.title("AishBot")
